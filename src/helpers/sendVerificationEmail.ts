@@ -4,15 +4,15 @@ import VerificationEmail from "../../emails/verificationEmail";
 
 export default async function sendVerificationEmail(
   userName: string,
-  otp: string,
+  verifyCode: string,
   email: string
 ): Promise<ApiResponse> {
   try {
     await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "onboarding@resend.dev",
       to: email,
       subject: "SecretSend Verification code",
-      react: VerificationEmail({ userName, otp }),
+      react: VerificationEmail({ userName, otp: verifyCode }),
     });
     return {
       success: true,
