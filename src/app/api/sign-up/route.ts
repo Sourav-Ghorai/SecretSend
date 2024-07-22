@@ -42,6 +42,31 @@ export async function POST(request: Request) {
         existingUserByEmail.verifyCode = verifyCode;
         existingUserByEmail.verifyCodeExpiry = new Date(Date.now() + 3600000);
         await existingUserByEmail.save();
+
+        const emailResponse = await sendVerificationEmail(
+          email,
+          userName,
+          verifyCode
+        );
+      //   console.log(emailResponse);
+        if (!emailResponse.success) {
+          return Response.json(
+            {
+              success: false,
+              message: emailResponse.message,
+            },
+            { status: 500 }
+          );
+        }
+
+        return Response.json(
+          {
+            success: true,
+            message:
+              "User registered successfully. Please check email for OTP verification.",
+          },
+          { status: 201 }
+        );
       }
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -80,7 +105,7 @@ export async function POST(request: Request) {
         {
           success: true,
           message:
-            "User registered successfully. Please check email for verification",
+            "User registered successfully. Please check email for OTP verification.",
         },
         { status: 201 }
       );
