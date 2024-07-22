@@ -86,7 +86,7 @@ export async function GET(request:Request) {
         { status: 200 }
       );
    } catch (error) {
-       console.error("Error in getting user acceptingMessage status", error);
+       console.error("Error in getting user acceptingMessage status: ", error);
        return Response.json(
          {
            success: false,
