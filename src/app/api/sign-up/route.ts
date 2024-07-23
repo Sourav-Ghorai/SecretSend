@@ -2,6 +2,7 @@ import sendVerificationEmail from "@/helpers/sendVerificationEmail";
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/models/User";
 import bcrypt from "bcrypt";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   await dbConnect();
@@ -15,7 +16,7 @@ export async function POST(request: Request) {
     });
 
     if (existingUserByUserName) {
-      return Response.json(
+      return NextResponse.json(
         {
           success: false,
           message: "User name already taken",
@@ -29,10 +30,10 @@ export async function POST(request: Request) {
 
     if (existingUserByEmail) {
       if (existingUserByEmail.isVerified) {
-        return Response.json(
+        return NextResponse.json(
           {
             success: false,
-            message: "User already exist with this email",
+            message: "User already exists with this email",
           },
           { status: 400 }
         );
@@ -40,6 +41,7 @@ export async function POST(request: Request) {
         const hashedPassword = await bcrypt.hash(password, 10);
         existingUserByEmail.password = hashedPassword;
         existingUserByEmail.verifyCode = verifyCode;
+        existingUserByEmail.userName = userName;
         existingUserByEmail.verifyCodeExpiry = new Date(Date.now() + 3600000);
         await existingUserByEmail.save();
 
@@ -48,9 +50,9 @@ export async function POST(request: Request) {
           userName,
           verifyCode
         );
-      //   console.log(emailResponse);
+
         if (!emailResponse.success) {
-          return Response.json(
+          return NextResponse.json(
             {
               success: false,
               message: emailResponse.message,
@@ -59,11 +61,11 @@ export async function POST(request: Request) {
           );
         }
 
-        return Response.json(
+        return NextResponse.json(
           {
             success: true,
             message:
-              "User registered successfully. Please check email for OTP verification.",
+              "Updated successfully. Please check email for OTP verification.",
           },
           { status: 201 }
         );
@@ -85,14 +87,13 @@ export async function POST(request: Request) {
       });
       await newUser.save();
 
-      //Send verification email
       const emailResponse = await sendVerificationEmail(
+        email,
         userName,
-        verifyCode,
-        email
+        verifyCode
       );
       if (!emailResponse.success) {
-        return Response.json(
+        return NextResponse.json(
           {
             success: false,
             message: emailResponse.message,
@@ -101,7 +102,7 @@ export async function POST(request: Request) {
         );
       }
 
-      return Response.json(
+      return NextResponse.json(
         {
           success: true,
           message:
@@ -111,8 +112,8 @@ export async function POST(request: Request) {
       );
     }
   } catch (error) {
-    console.log("Error in registering user", error);
-    return Response.json(
+    console.error("Error in registering user:", error);
+    return NextResponse.json(
       {
         success: false,
         message: "Error in registering user",

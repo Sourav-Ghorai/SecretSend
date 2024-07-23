@@ -46,7 +46,10 @@ export default function VerificationEmail({
           </Text>
         </Row>
         <Row>
-          <Text>{otp}</Text>
+          <Text>Here is your OTP: {otp}</Text>
+        </Row>
+        <Row>
+          <Text>Will be inactive with in 1 hour.</Text>
         </Row>
         <Row>
           <Text>
