@@ -120,7 +120,7 @@ function Dashboard() {
 
   const { userName } = session.user;
 
-  const baseUrl = `${window.location.href}`;
+  const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${userName}`;
 
   //Copy to clipboard
@@ -151,16 +151,16 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="mb-4">
+        <div className="mb-4 flex">
           <Switch
             {...register("acceptMessages")}
             checked={acceptMessages}
             onCheckedChange={handleSwitchChange}
             disabled={isSwitchLoading}
           />
-          <span className="ml-2">
+          <p className="ml-2">
             Accept Messages: {acceptMessages ? "On" : "Off"}
-          </span>
+          </p>
         </div>
         <Separator />
 

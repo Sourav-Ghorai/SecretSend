@@ -57,7 +57,7 @@ function SignInPage() {
           title: "Success",
           description: "Log in successful",
         });
-        router.replace('/dashboard'); // Navigate to the URL provided by NextAuth
+        router.replace('/'); // Navigate to the URL provided by NextAuth
       }
     } catch (error) {
       toast({

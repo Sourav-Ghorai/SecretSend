@@ -17,7 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Mail } from "lucide-react";
+import { Mail, User2 } from "lucide-react";
 import axios, { AxiosError } from "axios";
 import { useToast } from "@/components/ui/use-toast";
 import { ApiResponse } from "@/types/ApiResponse";
@@ -34,10 +34,10 @@ function Home() {
       const response = await axios.get(`/api/get-all-user`);
       if (response.data.success) {
         setUsers(response.data.user);
-      //   toast({
-      //     title: "Success",
-      //     description: response.data.message,
-      //   });
+        //   toast({
+        //     title: "Success",
+        //     description: response.data.message,
+        //   });
       }
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
@@ -81,7 +81,7 @@ function Home() {
                       <CardTitle>{message.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-4">
-                      <Mail className="flex-shrink-0" />
+                      <Mail className="flex-shrink-0 mt-1" />
                       <div>
                         <p>{message.content}</p>
                         <p className="text-xs text-muted-foreground">
@@ -106,7 +106,10 @@ function Home() {
               users.map((user) => (
                 <Card>
                   <CardHeader>
-                    <CardTitle>{user.userName}</CardTitle>
+                    <CardTitle className="flex">
+                      <User2 className="mr-2"/>
+                      {user.userName}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <Link href={`/u/${user.userName}`}>
