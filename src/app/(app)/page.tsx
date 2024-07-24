@@ -121,6 +121,10 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* Footer */}
+      <footer className="text-center p-4 md:p-6 bg-gray-200 text-gray-800">
+        © 2024 SecretSend. All rights reserved.
+      </footer>
     </>
   );
 }
