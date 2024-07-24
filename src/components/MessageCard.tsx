@@ -54,7 +54,7 @@ function MessageCard({ message, onDeleteMessage }: MessageCardProps) {
     <Card className="w-[350px]">
       <CardHeader>
         <div className="flex justify-between items-center">
-          <CardTitle>{message.content}</CardTitle>
+          <CardTitle className="text-lg">{message.content}</CardTitle>
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button variant="destructive">

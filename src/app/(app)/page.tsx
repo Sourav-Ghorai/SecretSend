@@ -57,13 +57,13 @@ function Home() {
 
   return (
     <>
-      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
+      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-100 text-slate-800 h-screen">
         <section className="text-center mb-8 md:mb-12">
           <h1 className="text-2xl md:text-4xl font-bold">
             Dive into the World of Anonymous Feedback
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-lg">
-            Secret Send- Where you send messages secretly 👾.
+            Secret Send- Where you send messages secretly 👾
           </p>
         </section>
         <Carousel
@@ -98,7 +98,7 @@ function Home() {
           <CarouselNext />
         </Carousel>
       </main>
-      <section className="bg-gray-100 flex flex-col justify-center px-4 md:px-20 py-10 text-gray-800">
+      <section className="bg-white flex flex-col justify-center px-4 md:px-20 py-10 text-gray-800">
         <div>
           <h3 className="text-lg md:text-2xl font-bold">Our Users</h3>
           <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -122,7 +122,7 @@ function Home() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="text-center p-4 md:p-6 bg-gray-200 text-gray-800">
+      <footer className="text-center p-4 md:p-6  text-gray-800">
         © 2024 SecretSend. All rights reserved.
       </footer>
     </>

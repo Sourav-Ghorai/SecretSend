@@ -43,7 +43,7 @@ function Page() {
   });
   const messageContent = form.watch("content");
 
-  //Message suggetion througn OPENAI_API_KEY
+  //Message suggetion throug OPENAI_API_KEY
   //   const specialChar = "||";
 
   //   const parseStringMessages = (messageString: string): string[] => {
@@ -127,7 +127,7 @@ function Page() {
   };
 
   return (
-    <div className="container mx-auto my-4 p-4 bg-white rounded max-w-4xl">
+    <div className="container mx-auto my-4 p-4 md:p-8 bg-gray-100 rounded max-w-4xl">
       <h1 className="text-4xl font-bold mb-6 text-center">
         Public Profile Link
       </h1>
