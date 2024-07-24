@@ -1,21 +1,21 @@
-import { Session } from './../../node_modules/next-auth/core/types.d';
-import 'next-auth'
+import "next-auth";
 
-declare module 'next-auth' {
-   interface Session {
-     user: {
-       _id?: string;
-       isVerified?: boolean;
-       isAcceptingMessages?: boolean;
-       username?: string;
-     } & DefaultSession["user"];
-   }
-   interface User {
-     _id?: string;
-     isVerified?: boolean;
-     isAcceptingMessages?: boolean;
-     userName?: string;
-   }
+declare module "next-auth" {
+  interface Session {
+    user: {
+      _id?: string;
+      isVerified?: boolean;
+      isAcceptingMessages?: boolean;
+      userName?: string;
+    } & DefaultSession["user"];
+  }
+
+  interface User {
+    _id?: string;
+    isVerified?: boolean;
+    isAcceptingMessages?: boolean;
+    userName?: string;
+  }
 }
 
 declare module "next-auth/jwt" {
@@ -23,6 +23,6 @@ declare module "next-auth/jwt" {
     _id?: string;
     isVerified?: boolean;
     isAcceptingMessages?: boolean;
-    username?: string;
+    userName?: string;
   }
 }

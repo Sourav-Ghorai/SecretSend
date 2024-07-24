@@ -51,18 +51,16 @@ export const authOptions: AuthOptions = {
         token._id = user._id?.toString(); // Convert ObjectId to string
         token.isVerified = user.isVerified;
         token.isAcceptingMessages = user.isAcceptingMessages;
-        token.username = user.userName;
+        token.userName = user.userName;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        session.user = {
-          _id: token._id,
-          isVerified: token.isVerified,
-          isAcceptingMessages: token.isAcceptingMessages,
-          username: token.username,
-        };
+        session.user._id = token._id;
+        session.user.isVerified = token.isVerified;
+        session.user.isAcceptingMessages = token.isAcceptingMessages;
+        session.user.userName = token.userName;
       }
       return session;
     },
