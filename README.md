@@ -23,11 +23,11 @@ This project is an anonymous social messaging platform that allows users to send
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: React, TypeScript
+- **Frontend**: React, TypeScript, Tailwind CSS, Shadcn/ui
 - **Backend**: Node.js, Next.js
 - **Database**: MongoDB
 - **Authentication**: NextAuth.js
-- **Styling**: Tailwind CSS, Shadcn/ui
+- **Email Service**: Resend
 
 ## 🏁 Getting Started
 
