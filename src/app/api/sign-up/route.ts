@@ -65,7 +65,7 @@ export async function POST(request: Request) {
           {
             success: true,
             message:
-              "Updated successfully. Please check email for OTP verification.",
+              "Registered successfully. Please check email for OTP verification.",
           },
           { status: 201 }
         );
