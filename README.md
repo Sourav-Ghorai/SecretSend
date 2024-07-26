@@ -1,4 +1,4 @@
-# 🩸 **SecretSend**
+# 👾 **SecretSend**
 
 This project is an anonymous social messaging platform that allows users to send messages to registered users without the need for registration or login. The platform integrates email verification during user registration to ensure authenticity and uses NextAuth.js for secure sign-in functionality. Registered users have a personalized dashboard where they can view and manage messages, and choose whether to accept messages. Built with React, Next.js, Node.js, and MongoDB, the application features a modern, responsive design powered by Tailwind CSS.
 <!-- ### The site is currently running at [https://perfect-pear-yoke.cyclic.app/](https://perfect-pear-yoke.cyclic.app/) -->
@@ -7,7 +7,7 @@ This project is an anonymous social messaging platform that allows users to send
 
 #### Register & Login <br/>
 
-<img src="./public/assets/ss1.png" alt="HomePage-Demo" width="300"/> <img src="./public/assets/ss2.png" alt="HomePage-Demo" width="300"/> <img src="./public/assets/ss3.png" alt="HomePage-Demo" width="300"/><br/>
+<img src="./public/assets/ss1.png" alt="HomePage-Demo" width="280"/> <img src="./public/assets/ss2.png" alt="HomePage-Demo" width="280"/> <img src="./public/assets/ss3.png" alt="HomePage-Demo" width="280"/><br/>
 
 #### Other Pages <br/>
 
