@@ -7,11 +7,11 @@ This project is an anonymous social messaging platform that allows users to send
 
 #### Register & Login <br/>
 
-<img src="./public/assets/ss1.png" alt="HomePage-Demo" width="250"/> <img src="./public/assets/ss2.png" alt="HomePage-Demo" width="250"/> <img src="./public/assets/ss3.png" alt="HomePage-Demo" width="250"/><br/>
-
-#### Other Pages <br/>
-
 <img src="./public/assets/ss4.png" alt="HomePage-Demo" width="300"/> <img src="./public/assets/ss5.png" alt="HomePage-Demo" width="300"/>
+
+#### Other Pages<br/>
+
+<img src="./public/assets/ss1.png" alt="HomePage-Demo" width="250"/> <img src="./public/assets/ss2.png" alt="HomePage-Demo" width="250"/> <img src="./public/assets/ss3.png" alt="HomePage-Demo" width="250"/><br/>
 
 ## ✨ Features
 
